@@ -9,7 +9,7 @@
 
 namespace soth
 {
-  
+
   HCOD::
   HCOD( Index inSizeProblem, Index nbStage )
   :
@@ -468,7 +468,7 @@ namespace soth
 	soth::sotDebugTrace::openFile(filename.c_str());
       }
 
-    isDebugOnce = ! keepOpen; 
+    isDebugOnce = ! keepOpen;
     sotDEBUG(15) << "Test trace"<<std::endl;
   }
 
@@ -574,7 +574,11 @@ namespace soth
 	      }
 	  }
 
-	if( iter>1000 ) throw 666;
+	  if( iter>5 )
+      {
+          std::cout << 666 << std::endl;
+          break;
+      }
     } while(stageMinimal<=nbStages());
     sotDEBUG(5) << "Lagrange>=0, no downdate, active search completed." << std::endl;
     /*gettimeofday(&t2,NULL);
@@ -720,4 +724,3 @@ namespace soth
 
 
 } // namespace soth
-
