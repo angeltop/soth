@@ -574,7 +574,11 @@ namespace soth
 	      }
 	  }
 
-	if( iter>1000 ) throw 666;
+	  if( iter>5 )
+      	  {
+         	 std::cout << 666 << std::endl;
+		 break;
+	   }
     } while(stageMinimal<=nbStages());
     sotDEBUG(5) << "Lagrange>=0, no downdate, active search completed." << std::endl;
     /*gettimeofday(&t2,NULL);
